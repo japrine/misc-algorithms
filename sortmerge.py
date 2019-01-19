@@ -1,14 +1,4 @@
-from random import randint
-
-
-def random_lister(x, z):  # x is length and y is int max
-    l = []
-    for _ in range(x):
-        l.append(randint(1, z))
-    return l
-
-
-def sort_merger(l):
+def sort(l):
     if len(l) < 3:
         # print('base', l)
         l.sort()
@@ -18,8 +8,8 @@ def sort_merger(l):
         # print('unsorted', l)
         a, b = l[:s], l[s:]
         # print('unsorted split', a, b)
-        a = sort_merger(a)
-        b = sort_merger(b)
+        a = sort(a)
+        b = sort(b)
         # print('sorted split', a, b)
         o = []  # merger
         i, j = 0, 0
@@ -39,9 +29,3 @@ def sort_merger(l):
                 j += 1
         # print('sorted merge', o)
         return o
-
-
-if __name__ == '__main__':
-    l = random_lister(100000, 100000)
-    print(l)
-    print(sort_merger(l))
