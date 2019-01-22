@@ -27,17 +27,17 @@ if __name__ == '__main__':
     l = random_lister(100000, 100000)
     print(l)
 
-    # Sort Merge
-    # print(sortmerge.sort(l))
+    # Sort Merge - recursive even split and sorting merge
+    print(sortmerge.sort(l))
 
-    # Quck Sort
+    # Quick Sort -
     # print(quicksort.first(l))
     # print(quicksort.last(l))
     # print(quicksort.random(l))
     # print(quicksort.three(l))
 
     # Inversion Count
-    print(inversioncount.sort_merge(l))
+    # print(inversioncount.sort_merge(l))
 
     # Karatsuba Multiplication
     # print(karatsuba.multiply(3141592653589793238462643383279502884197169399375105820974944592,

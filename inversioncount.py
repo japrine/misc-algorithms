@@ -1,3 +1,6 @@
+# Count number of inversions
+
+
 def brute(a):
     if len(a) < 2:
         return 0
