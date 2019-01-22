@@ -4,6 +4,7 @@ from random import randint
 import sortmerge
 import quicksort
 import inversioncount
+import selection
 import karatsuba
 
 
@@ -28,7 +29,7 @@ if __name__ == '__main__':
     print(l)
 
     # Sort Merge - recursive even split and sorting merge
-    print(sortmerge.sort(l))
+    # print(sortmerge.sort(l))
 
     # Quick Sort -
     # print(quicksort.first(l))
@@ -38,6 +39,9 @@ if __name__ == '__main__':
 
     # Inversion Count
     # print(inversioncount.sort_merge(l))
+
+    # Selection - Find value for index x as if it were sorted (partial sort)
+    print('Value at index 1000 is:', selection.random(l, 1000))
 
     # Karatsuba Multiplication
     # print(karatsuba.multiply(3141592653589793238462643383279502884197169399375105820974944592,
