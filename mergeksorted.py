@@ -1,6 +1,6 @@
 def merge(lists):
     output = []
-
+    print(lists)
     def nested_len(l):
         if type(l) == list:
             return sum(nested_len(sublist) for sublist in l)

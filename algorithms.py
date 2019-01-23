@@ -24,10 +24,18 @@ def load_list(filename):
     return data
 
 
+def sorted_lists():
+    lists = []
+    for k in range(10):
+        lists.append(sortmerge.sort(random_lister(100, 100)))
+    print(len(lists))
+    return lists
+
+
 if __name__ == '__main__':
     # For Sorts
-    l = random_lister(100000, 100000)
-    print(l)
+    # l = random_lister(100000, 100000)
+    # print(l)
 
     # Sort Merge - recursive even split and sorting merge
     # print(sortmerge.sort(l))
@@ -39,13 +47,14 @@ if __name__ == '__main__':
     # print(quicksort.three(l))
 
     # Merge K Sorted Lists
-    # print(mergeksorted.merge(lists))
+    lists = sorted_lists()
+    print(mergeksorted.merge(lists))
 
     # Inversion Count
     # print(inversioncount.sort_merge(l))
 
     # Selection - Find value for index x as if it were sorted (partial sort)
-    print('Value at index 1000 is:', selection.random(l, 1000))
+    # print('Value at index 1000 is:', selection.random(l, 1000))
 
     # Karatsuba Multiplication
     # print(karatsuba.multiply(3141592653589793238462643383279502884197169399375105820974944592,
