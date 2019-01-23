@@ -27,8 +27,7 @@ def load_list(filename):
 def sorted_lists():
     lists = []
     for k in range(10):
-        lists.append(sortmerge.sort(random_lister(100, 100)))
-    print(len(lists))
+        lists.append(sortmerge.sort(random_lister(5, 100000)))
     return lists
 
 
