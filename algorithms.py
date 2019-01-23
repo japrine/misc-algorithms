@@ -3,6 +3,7 @@ from random import randint
 # My Algorithms
 import sortmerge
 import quicksort
+import mergeksorted
 import inversioncount
 import selection
 import karatsuba
@@ -36,6 +37,9 @@ if __name__ == '__main__':
     # print(quicksort.last(l))
     # print(quicksort.random(l))
     # print(quicksort.three(l))
+
+    # Merge K Sorted Lists
+    # print(mergeksorted.merge(lists))
 
     # Inversion Count
     # print(inversioncount.sort_merge(l))
