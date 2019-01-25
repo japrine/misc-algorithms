@@ -7,6 +7,7 @@ import mergeksorted
 import inversioncount
 import selection
 import karatsuba
+import matrixmulti
 
 
 def random_lister(x, z):  # x is length and y is int max
@@ -46,8 +47,8 @@ if __name__ == '__main__':
     # print(quicksort.three(l))
 
     # --= Merge K Sorted Lists =--
-    lists = sorted_lists()
-    print(mergeksorted.merge(lists))
+    # lists = sorted_lists()
+    # print(mergeksorted.merge(lists))
 
     # ----==== Inversion Count ====----
     # Counts smaller values to the right of larger ones
@@ -60,6 +61,13 @@ if __name__ == '__main__':
     # ----==== Karatsuba Multiplication ====----
     # print(karatsuba.multiply(3141592653589793238462643383279502884197169399375105820974944592,
     #                          2718281828459045235360287471352662497757247093699959574966967627))
+
+    # ----==== Matrix Multiplication ====----
+    x = [[1, 2],
+         [3, 4]]
+    y = [[5, 6],
+         [7, 8]]
+    print(matrixmulti.multi(x, y))
 
     # Minimum Cut
 
