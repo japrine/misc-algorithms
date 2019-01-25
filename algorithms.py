@@ -32,30 +32,32 @@ def sorted_lists():
 
 
 if __name__ == '__main__':
-    # For Sorts
+    # ----==== For Sorts ====----
     # l = random_lister(100000, 100000)
     # print(l)
 
-    # Sort Merge - recursive even split and sorting merge
+    # --= Sort Merge =--
     # print(sortmerge.sort(l))
 
-    # Quick Sort -
+    # --= Quick Sort =--
     # print(quicksort.first(l))
     # print(quicksort.last(l))
     # print(quicksort.random(l))
     # print(quicksort.three(l))
 
-    # Merge K Sorted Lists
+    # --= Merge K Sorted Lists =--
     lists = sorted_lists()
     print(mergeksorted.merge(lists))
 
-    # Inversion Count
+    # ----==== Inversion Count ====----
+    # Counts smaller values to the right of larger ones
     # print(inversioncount.sort_merge(l))
 
-    # Selection - Find value for index x as if it were sorted (partial sort)
+    # ----==== Selection ====----
+    # Finds value for index x as if it were sorted (partial sort)
     # print('Value at index 1000 is:', selection.random(l, 1000))
 
-    # Karatsuba Multiplication
+    # ----==== Karatsuba Multiplication ====----
     # print(karatsuba.multiply(3141592653589793238462643383279502884197169399375105820974944592,
     #                          2718281828459045235360287471352662497757247093699959574966967627))
 
