@@ -8,6 +8,7 @@ import inversioncount
 import selection
 import karatsuba
 import matrixmulti
+import mincut
 
 
 def random_lister(x, z):  # x is length and y is int max
@@ -63,11 +64,20 @@ if __name__ == '__main__':
     #                          2718281828459045235360287471352662497757247093699959574966967627))
 
     # ----==== Matrix Multiplication ====----
-    x = [[1, 2],
-         [3, 4]]
-    y = [[5, 6],
-         [7, 8]]
-    print(matrixmulti.multi(x, y))
+    x = [[1, 2], [3, 4]]
+    y = [[5, 6], [7, 8]]
+    # print(matrixmulti.multi(x, y))
 
-    # Minimum Cut
-
+    # ----==== Minimum Cut ====----
+    # Sample array with two connections between 1-4 and 5-8
+    array = [
+        [1, 2, 3, 4],
+        [2, 1, 3, 4],
+        [3, 1, 2, 4, 5],
+        [4, 1, 2, 3, 6],
+        [5, 6, 7, 8, 3],
+        [6, 5, 7, 8, 4],
+        [7, 8, 5, 6],
+        [8, 5, 6, 7]]
+    print('All Results', mincut.run_karger(array))
+    print('Smallest connection', min(mincut.run_karger(array)))
