@@ -36,11 +36,28 @@ def palindrome_permutations(s):
     if len(s) == 0:
         return ""
     output = []
-    for _ in range(len(s)):
-        print(s[_])
 
-print('Is Unique:', is_unique('Jon'))
-print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
-print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
-print(urlify('John Thomas Smith'))
+    def add_letter(idx):
+        output.append([])
+        if len(output) == 1:
+            output[idx].append(s[idx])
+            return
+        for x in range(len(output[idx-1])):
+            for _ in range(len(output[idx-1]) + 1):
+                string1 = output[idx-1][x][:_]
+                string2 = output[idx-1][x][_:]
+                string3 = s[idx]
+                output[idx].append(string1 + string3 + string2)
+        return
+
+    for _ in range(len(s)):
+        add_letter(_)
+    return output[len(output)-1]
+
+
+# print('Is Unique:', is_unique('Jon'))
+# print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
+# print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
+# print(urlify('John Thomas Smith'))
 print('Palindromes :', palindrome_permutations('Jon'))
+
