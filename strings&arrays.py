@@ -35,11 +35,12 @@ def urlify(s):
 def palindrome_permutations(s):
     if len(s) == 0:
         return ""
-    for idx, _ in enumerate(s):
-        print()
-
+    output = []
+    for _ in range(len(s)):
+        print(s[_])
 
 print('Is Unique:', is_unique('Jon'))
 print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
 print(urlify('John Thomas Smith'))
+print('Palindromes :', palindrome_permutations('Jon'))
