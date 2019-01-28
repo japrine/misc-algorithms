@@ -58,5 +58,5 @@ def palindrome_permutations(s):
 print('Is Unique:', is_unique('Jon'))
 print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
-print(urlify('John Thomas Smith'))
-print('Palindromes :', palindrome_permutations('John'))
+print('URLify:', urlify('John Thomas Smith'))
+print('Palindromes:', palindrome_permutations('John'))
