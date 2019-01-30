@@ -117,6 +117,15 @@ def zero_matrix(data):
     return output
 
 
+def string_rotation(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    for _ in range(len(s2)):
+        z = s2[_:] + s2[:_]
+        if z == s1:
+            return True
+
+
 print('Is Unique:', is_unique('Jon'))
 print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
@@ -126,3 +135,4 @@ print('One Away:', one_away('Jonx', 'Jons'))
 print('String Compression:', string_compression('aabcccccaaa'))
 print('Rotate Matrix:', rotate_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]))
 print('Zero Matrix:', zero_matrix([[1, 2, 3, 4], [5, 6, 0, 8], [9, 10, 11, 12]]))
+print('String Rotation:', string_rotation('waterbottle', 'erbottlewat'))
