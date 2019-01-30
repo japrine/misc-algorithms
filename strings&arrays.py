@@ -78,7 +78,7 @@ def one_away(s1, s2):
 
 def string_compression(s):
     rep = 1
-    output = ' '
+    output = ''
     for _ in range(0, len(s) - 1):
         if s[_] == s[_+1]:
             rep += 1
@@ -109,4 +109,3 @@ print('Palindromes:', palindrome_permutations('John'))
 print('One Away:', one_away('Jonx', 'Jons'))
 print('String Compression:', string_compression('aabcccccaaa'))
 print('Rotate Matrix:', rotate_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]))
-
