@@ -22,7 +22,6 @@ def check_permutation(s1, s2):
 
 
 def urlify(s):
-    # s = s.replace(' ', '%20')
     while True:
         for idx, _ in enumerate(s):
             if _ == ' ':
@@ -93,10 +92,21 @@ def string_compression(s):
     return output
 
 
+def rotate_matrix(data):
+    for y in range(len(data) // 2):
+        n = len(data) - 1 - y
+        for x in range(y, n):
+            z = n-x+y
+            data[y][x], data[x][n], data[z][y], data[n][z] = data[x][n], data[n][z], data[y][x], data[z][y]
+    return data
+
+
 print('Is Unique:', is_unique('Jon'))
 print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
 print('URLify:', urlify('John Thomas Smith'))
 print('Palindromes:', palindrome_permutations('John'))
 print('One Away:', one_away('Jonx', 'Jons'))
-print('String Compression', string_compression('aabcccccaaa'))
+print('String Compression:', string_compression('aabcccccaaa'))
+print('Rotate Matrix:', rotate_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]))
+
