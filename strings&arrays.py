@@ -101,6 +101,22 @@ def rotate_matrix(data):
     return data
 
 
+def zero_matrix(data):
+    output = []
+    for y in range(len(data)):
+        output.append([])
+        for x in range(len(data[0])):
+            output[y].append(data[y][x])
+    for y in range(len(data)):
+        for x in range(len(data[0])):
+            if data[y][x] == 0:
+                for _ in range(len(data[0])):
+                    output[y][_] = 0
+                for _ in range(len(data)):
+                    output[_][x] = 0
+    return output
+
+
 print('Is Unique:', is_unique('Jon'))
 print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
@@ -109,3 +125,4 @@ print('Palindromes:', palindrome_permutations('John'))
 print('One Away:', one_away('Jonx', 'Jons'))
 print('String Compression:', string_compression('aabcccccaaa'))
 print('Rotate Matrix:', rotate_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]))
+print('Zero Matrix:', zero_matrix([[1, 2, 3, 4], [5, 6, 0, 8], [9, 10, 11, 12]]))
