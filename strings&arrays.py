@@ -55,8 +55,30 @@ def palindrome_permutations(s):
     return len(output), output
 
 
+def one_away(s1, s2):
+    if s1 == s2:
+        return True
+    if len(s1) > len(s2):
+        for _ in range(len(s1)):
+            x = s1[:_] + s1[_+1:]
+            if x == s2:
+                return True
+    elif len(s2) > len(s1):
+        for _ in range(len(s2)):
+            y = s2[:_] + s2[_+1:]
+            if y == s1:
+                return True
+    elif len(s1) == len(s2):
+        for _ in range(len(s1)):
+            x = s1[:_] + s1[_+1:]
+            y = s2[:_] + s2[_+1:]
+            if x == y:
+                return True
+    return False
+
 print('Is Unique:', is_unique('Jon'))
 print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
 print('URLify:', urlify('John Thomas Smith'))
 print('Palindromes:', palindrome_permutations('John'))
+print('One Away:', one_away('Jonx', 'Jons'))
