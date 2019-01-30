@@ -76,9 +76,27 @@ def one_away(s1, s2):
                 return True
     return False
 
+
+def string_compression(s):
+    rep = 1
+    output = ' '
+    for _ in range(0, len(s) - 1):
+        if s[_] == s[_+1]:
+            rep += 1
+        else:
+            output = output + s[_] + str(rep)
+            rep = 1
+        if _ == len(s) - 2:
+            output = output + s[_+1] + str(rep)
+    if len(output) >= len(s):
+        output = s
+    return output
+
+
 print('Is Unique:', is_unique('Jon'))
 print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
 print('URLify:', urlify('John Thomas Smith'))
 print('Palindromes:', palindrome_permutations('John'))
 print('One Away:', one_away('Jonx', 'Jons'))
+print('String Compression', string_compression('aabcccccaaa'))
