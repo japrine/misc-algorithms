@@ -21,6 +21,12 @@ def check_permutation(s1, s2):
     return False
 
 
+def check_permutation2(s1, s2):
+    chars = []
+    for _ in range(len(s1)):
+        pass
+
+
 def urlify(s):
     while True:
         for idx, _ in enumerate(s):
