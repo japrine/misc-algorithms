@@ -21,10 +21,15 @@ def check_permutation(s1, s2):
     return False
 
 
-def check_permutation2(s1, s2):
-    chars = []
+def is_permutation(s1, s2):
+    chars = [0] * 128
     for _ in range(len(s1)):
-        pass
+        chars[s1[_].encode()[0]] += 1
+    for _ in range(len(s2)):
+        chars[s2[_].encode()[0]] -= 1
+        if chars[s2[_].encode()[0]] == -1:
+            return False
+    return True
 
 
 def urlify(s):
@@ -38,6 +43,12 @@ def urlify(s):
 
 
 def palindrome_permutations(s):
+    print(b'J'.decode())
+    for _ in range(len(s)):
+        print(_)
+
+
+def permutations(s):
     if len(s) == 0:
         return ""
     output = []
@@ -135,8 +146,10 @@ def string_rotation(s1, s2):
 print('Is Unique:', is_unique('Jon'))
 print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
+print('Is String1 a permutation of String2:', is_permutation('Jon', 'noJ'))
 print('URLify:', urlify('John Thomas Smith'))
-print('Palindromes:', palindrome_permutations('John'))
+print('Palindromes:', palindrome_permutations('thht'))
+print('Permutations:', permutations('John'))
 print('One Away:', one_away('Jonx', 'Jons'))
 print('String Compression:', string_compression('aabcccccaaa'))
 print('Rotate Matrix:', rotate_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]))
