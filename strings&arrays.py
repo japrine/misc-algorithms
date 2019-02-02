@@ -43,9 +43,13 @@ def urlify(s):
 
 
 def palindrome_permutations(s):
-    print(b'J'.decode())
+    chars = {}
     for _ in range(len(s)):
-        print(_)
+        if not s[_] in chars:
+            chars[s[_]] = 1
+        else:
+            chars[s[_]] += 1
+    return chars
 
 
 def permutations(s):
