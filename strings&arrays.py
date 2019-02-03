@@ -44,12 +44,47 @@ def urlify(s):
 
 def palindrome_permutations(s):
     chars = {}
+    odd = False
+    output = []
+    even_chars, odd_chars = '', ''
     for _ in range(len(s)):
         if not s[_] in chars:
             chars[s[_]] = 1
         else:
             chars[s[_]] += 1
-    return chars
+    for k, v in chars.items():
+        if v % 2:
+            if odd is False:
+                odd = True
+                odd_chars = k
+            else:
+                return False
+        else:
+            for _ in range(v // 2):
+                even_chars = even_chars + k
+
+    def add_letter(idx):
+        new_output = []
+        if len(output) == 0:
+            new_output.append(even_chars[idx])
+        else:
+            for x in range(len(output)):
+                for _ in range(idx + 1):
+                    s = output[x][:_] + even_chars[idx] + output[x][_:]
+                    new_output.append(s)
+        return new_output
+
+    for _ in range(len(even_chars)):
+        output = add_letter(_)
+        pass
+
+    for x in range(len(output)):
+        for _ in range(len(output[x])):
+            if odd is True and _ == 0:
+                output[x] = output[x] + odd_chars
+            z = -1-len(odd_chars)-(2*_)
+            output[x] = output[x] + output[x][z]
+    return True, output
 
 
 def permutations(s):
@@ -152,7 +187,7 @@ print('Is Unique (no additional data structure):', is_unique_no_data('Jonath'))
 print('Is String a permutation:', check_permutation('Jon', 'Jonathan'))
 print('Is String1 a permutation of String2:', is_permutation('Jon', 'noJ'))
 print('URLify:', urlify('John Thomas Smith'))
-print('Palindromes:', palindrome_permutations('thht'))
+print('Palindromes:', palindrome_permutations('thhjtzz'))
 print('Permutations:', permutations('John'))
 print('One Away:', one_away('Jonx', 'Jons'))
 print('String Compression:', string_compression('aabcccccaaa'))
